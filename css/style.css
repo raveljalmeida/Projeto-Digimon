@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#7e879e, #80c6e3);
+}
+
+/***********Inicio topo do painel***********/
+
+.header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    max-width: 20%;
+    height: auto;
+    display: block;
+    margin: 40px auto;
+}
+
+/***********Fim topo do painel***********/
+
+
+/***********Inicio corpo do painel***********/
+
+#search { /*Pesquisa*/
+    width: 70%;
+    display: block;
+    margin: 120px auto;
+    padding: 25px 30px;
+    border-radius: 20px;
+    border: 1px solid #ebebeb;
+    background-color: #acb4c0;
+    font-size: 25px;
+    background-image: url("../img/lupa.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 35px 35px;
+    padding-right: 35px;
+    background-origin: content-box;
+}
+
+#search::placeholder { /*Pesquisa*/
+    color: #ebebeb;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.categories { /*Categorias*/
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: -50px;
+}
+
+.categories button { /*Categorias*/
+    width: 200px;
+    height: 70px;
+    background-color: #acb4c0;
+    color: #ebebeb;
+    border: 1px solid #ebebeb;
+    font-size: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.categories :not(:last-child){ /*Categorias*/
+    margin-right: 2%;
+}
+
+.categories button:hover { /*Categorias*/
+    background-color: #0074a3;
+}
+
+/***********Fim corpo do painel***********/
