@@ -4,8 +4,6 @@
 }
 
 html {
-    height: 100%;
-    width: 100%;
     background: linear-gradient(#7e879e, #80c6e3);
 }
 
@@ -31,7 +29,7 @@ html {
 /***********Inicio corpo do painel***********/
 
 #search { /*Pesquisa*/
-    width: 70%;
+    width: 60%;
     display: block;
     margin: 120px auto;
     padding: 25px 30px;
@@ -61,8 +59,8 @@ html {
 }
 
 .categories button { /*Categorias*/
-    width: 200px;
-    height: 70px;
+    width: 160px;
+    height: 66px;
     background-color: #acb4c0;
     color: #ebebeb;
     border: 1px solid #ebebeb;
@@ -78,5 +76,52 @@ html {
 .categories button:hover { /*Categorias*/
     background-color: #0074a3;
 }
+
+/***********Inicio Digimons***********/
+
+#digimon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin: 50px auto;
+}
+
+.digimon-card {
+    background-color: rgba(214, 221, 230, 0.56);
+    width: 250px;
+    height: 320px;
+    text-align: center;
+    margin: 20px 20px;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+
+.digimon-card img {
+    max-width: 80%;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.digimon-card p {
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    margin-top: 15px;
+}
+
+.details-button {
+    margin-top: 12px;
+    width: 55%;
+    height: 40px;
+    background-color: #008cc7;
+    color: white;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    border: none;
+}
+
+/***********Fim Digimons***********/
 
 /***********Fim corpo do painel***********/
