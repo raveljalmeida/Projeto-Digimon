@@ -74,7 +74,11 @@ html {
 }
 
 .categories button:hover { /*Categorias*/
-    background-color: #0074a3;
+    transform: translateY(-3px);
+}
+
+.categories button.active {
+    background-color: #008cc7;
 }
 
 /***********Inicio Digimons***********/
@@ -120,6 +124,7 @@ html {
     font-family: Arial, sans-serif;
     font-weight: normal;
     border: none;
+    cursor: pointer;
 }
 
 /***********Fim Digimons***********/
