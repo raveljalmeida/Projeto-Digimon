@@ -1,7 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     const digimonContainer = document.getElementById('digimon-container');
     const searchInput = document.getElementById('search');
-    const categoryButtons = document.querySelectorAll('.categories button')
+    const categoryButtons = document.querySelectorAll('.categories button');
+
+    const modal = document.getElementById('modal');
+    const modalName = document.getElementById('modal-name');
+    const modalImg = document.getElementById('modal-img');
+    const modalLevel = document.getElementById('modal-level');
+    const modalDescription = document.getElementById('modal-description');
+    const closeModal = document.querySelector('.close');
 
     let allDigimons = []
 
@@ -30,6 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             digimonContainer.appendChild(digimonCard);
         });
+
+        document.querySelectorAll('.details-button').forEach(button => {
+            button.addEventListener('click', event => {
+                const digimonName = event.target.dataset.name;
+                const digimon = allDigimons.find(d => d.name === digimonName);
+                showModal(digimon);
+            });
+        });
     }
 
     /***********Função responsável por filtrar os digimons pelas categorias e pela barra de pesquisa***********/
@@ -55,6 +70,30 @@ document.addEventListener('DOMContentLoaded', () => {
             button.classList.add('active');
             filterDigimons();
         });
+    });
+
+    /***********Função responsável por mostrar com mais detalhes o digmon ao ser apertado o botão "Ver detalhes"***********/
+
+    function showModal(digimon) {
+        modalName.textContent = digimon.name;
+        modalImg.src = digimon.img;
+        modalLevel.innerHTML = `<span class="point">•</span> ${digimon.level}`;
+        modalDescription.innerHTML = `<span style="color: black;">Descrição:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nulla eros, pulvinar id magna sed, sagittis tempus elit. Nulla lacinia laoreet magna quis maximus. Morbi non arcu ullamcorper justo commodo feugiat a id tellus. Ut id scelerisque urna. In ac nunc venenatis, lobortis ipsum vitae, sagittis quam.`;
+        modal.style.display = 'block';
+    }
+
+    /**********Fecha tela de detalhes ao apertar no "x" do mesmo***********/
+
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    /***********Fecha a tela de detalhes ao apertar fora da mesma***********/
+
+    window.addEventListener('click', event => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
     });
 
     fetchDigimons();

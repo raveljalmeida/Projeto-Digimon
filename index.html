@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <!--Topo do painel-->
+    <!--Inicio Topo do painel-->
     <header>
         <img class="logo" src="./img/digimonLogo.png"/>
         <input type="text" id="search" placeholder="Buscar" />
     </header>
-    <!--Topo do painel-->
+    <!--Fim Topo do painel-->
 
-    <!--Corpo do painel-->
+    <!--Inicio Corpo do painel-->
     <main>
-        <!--Categorias para filtrar digimons-->
+        <!--Inicio Categorias para filtrar digimons-->
         <div class="categories">
             <button class='category-button active' data-category="All">Todos</button>
             <button class='category-button' data-category="Fresh">Fresh</button>
@@ -26,10 +26,27 @@
             <button class='category-button' data-category="Mega">Mega</button>
             <button class='category-button' data-category="Ultimate">Ultimate</button>
         </div>
-        <!--Categorias para filtrar digimons-->
+        <!--Fim Categorias para filtrar digimons-->
+
         <div id="digimon-container"></div>
     </main>
-    <!--Corpo do painel-->
+    <!--Fim Corpo do painel-->
+
+    <!--Inicio Mostrar os digimons com mais detalhes-->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&#9447;</span>
+            <h2 id="modal-name"></h2>
+            <div class="contentDescImg">
+                <img id="modal-img" src="" alt="">
+                <div class="container-description">
+                    <p id="modal-level"></p>
+                    <p id="modal-description"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fim Mostrar os digimons com mais detalhes-->
 
     <script src="./js/script.js"></script>
 </body>
